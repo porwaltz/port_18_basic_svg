@@ -1,0 +1,146 @@
+:root {
+    /*palette 1*/
+    --dark-olive-green: #606c38ff; --p1-1: #606c38ff;
+    --kombu-green: #283618ff; --p1-2: #283618ff;
+    --cornsilk: #fefae0ff; --p1-3: #fefae0ff;
+    --earth-yellow: #dda15eff; --p1-4: #dda15eff;
+    --liver-dogs: #bc6c25ff; --p1-5: #bc6c25ff;
+    
+    /*palette 2*/
+    --pale-spring-bud: #ccd5aeff; --p2-1: #ccd5aeff;
+    --pale-spring-bud-2: #e9edc9ff; --p2-2: #e9edc9ff;
+    --cornsilk: #fefae0ff; --p2-3: #fefae0ff;
+    --papaya-whip: #faedcdff; --p2-4: #faedcdff;
+    --fawn: #d4a373ff; --p2-5: #d4a373ff;
+    
+    /*palette 3*/
+    --artichoke: #a3a380ff; --p3-1: #a3a380ff;
+    --medium-champagne: #d6ce93ff; --p3-2: #d6ce93ff;
+    --beige: #efebceff; --p3-3: #efebceff;
+    --tumbleweed: #d8a48fff; --p3-4: #d8a48fff;
+    --old-rose: #bb8588ff; --p3-5: #bb8588ff;
+}
+body{ 
+    padding: 0;
+    margin: 0;
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+    display: flex;
+    flex-wrap: wrap;
+}
+h1 {
+    margin: 0.5em;
+    margin-bottom: 0;
+}
+.flex-item {
+    margin: 1em;
+}
+
+svg {
+    border: 1px solid;
+    width: 600px;
+    height: 200px;
+}
+
+.oscilate {
+    animation: move 1s ease-in-out infinite alternate;
+}
+.orbitate {
+    animation: 
+    orbitate-x 2s ease-in-out infinite alternate,
+    orbitate-y 2s ease-in-out 1s infinite alternate;
+}
+
+.first-rect {
+    x: 40; y: 36;
+    width: 100px;
+    height: 60px;
+    fill: var(--p3-2);
+    stroke: var(--p3-1);
+    stroke-width: 2;
+}
+.second-rect {
+    x: 40; y: 104;
+    width: 100px;
+    height: 60px;
+    fill: var(--p1-1);
+    stroke: var(--p1-2);
+    stroke-width: 2;
+    stroke-linejoin: bevel;
+}
+
+.first-line {
+    fill: NONE;
+    stroke: var(--p1-1);
+    stroke-width: 4px;
+    stroke-dasharray: 20;
+    animation: dash 12s linear infinite;
+}
+
+.round:hover{
+    animation: open-radius 0.4s ease 1 forwards;
+}
+.round:not(:hover){
+    animation: close-radius 0.4s ease 1 forwards;
+}
+
+.open:hover {
+    animation: open 0.4s ease 1 forwards;
+}
+
+.open:not(:hover) {
+    animation: close 0.4s ease 1 forwards;
+}
+
+.sign:hover{
+    font-family: impact;
+    animation: refont 0.4s ease 1 forwards;
+}
+.sign:not(:hover){
+    font-family: Arial;
+    animation: unfont 0.4s ease 1 forwards;
+}
+
+@keyframes open {
+    0%{ width: 100px;}
+    100%{ width: 400px;}
+}
+@keyframes close {
+    0%{ width: 400px;}
+    100%{ width: 100px;}
+}
+@keyframes open-radius {
+    0%{ r: 25; rx:25; ry:25}
+    100%{ r: 60; rx:60; ry:60}
+}
+@keyframes close-radius {
+    0%{ r: 60; rx:60; ry:60}
+    100%{ r: 25; rx:25; ry:25}
+}
+@keyframes move {
+    from{ cy: 50; }
+    to  { cy: 150; }
+}
+@keyframes orbitate-x {
+    0%      { cx: 120; fill: #000000;}
+    100%    { cx: 480; fill: teal;}
+}
+@keyframes orbitate-y {
+    0%      { cy: 20}
+    100%    { cy: 180}
+}
+
+@keyframes dash {
+    to { stroke-dashoffset: 1000; }
+  }
+@keyframes refont {
+    from    { font-size: 48px;}
+    to      { font-size: 80px;}
+}
+@keyframes unfont {
+    from    { font-size: 64px;}
+    to      { font-size: 48px;}
+}

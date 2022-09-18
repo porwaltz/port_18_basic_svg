@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Basic svg elements</h1>
+    <div class="page">
+        <div class="flex-item">
+            <h2>Circles</h2>
+            <svg viewBox="0 0 600 200">
+                <circle class="oscilate " cx="50" cy="100" r="25"/>
+                <circle class="orbitate" cx="120" cy="100" r="20"/>
+                <circle class="round" cx="250" cy="100" r="25"/>
+                <ellipse class="round" cx="350" cy="100" rx="25" ry="25" fill="teal" />
+                <ellipse class="oscilate " cx="550" cy="100" rx="25" ry="25" fill="teal" />
+            </svg>
+        </div>
+        <div class="flex-item">
+            <h2>Rectangles</h2>
+            <svg viewBox="0 0 500 200">
+                <rect class="open first-rect"/>
+                <rect class="open second-rect"/>
+            </svg>
+
+        </div>
+        <div class="flex-item">
+            <h2>Lines</h2>
+            <svg viewBox="0 0 600 200">
+                <line class="first-line"
+                x1="40" y1="50" x2="360" y2="50"/>
+                <polyline class="first-line"
+                points="40,120 80,150 120,120 160,150 200,120 240,150 280,120 320,150 360,120"/>
+                <polygon class="first-line"
+                points="400,50 560,50 560,150 400,150"/>
+            </svg>
+        </div>
+        <div class="flex-item">
+            <h2>Text</h2>
+            <svg viewBox="0 0 600 200">
+                <defs>
+                    <path id="curve" d="M50 120 Q300 200 550 120"/>
+                </defs>
+                <text class="sign"
+                x="50%" y="30%" text-anchor="middle" dominant-baseline="middle"
+                fill="teal" font-size="48">HOVER FOR MEME</text>
+                <text text-anchor="middle" dominant-baseline="middle">
+                    <textPath xlink:href="#curve" startOffset="50%"> No please. I don't want to bend myself. Stoooooop!</textPath>
+                </text>
+            </svg>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>
